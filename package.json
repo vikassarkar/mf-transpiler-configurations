@@ -2,7 +2,7 @@
   "name": "mf-transpiler-configurations",
   "version": "1.0.1",
   "description": "React Project build and dev server scripts",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "author": "vikassarkar",
   "license": "MIT",
   "repository": {
