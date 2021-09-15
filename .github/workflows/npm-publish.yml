@@ -36,7 +36,7 @@ jobs:
         env:
           GIT_AUTH_TOKEN: ${{secrets.git_token}}
   publish-npm:
-    needs: build
+    needs: patch-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
