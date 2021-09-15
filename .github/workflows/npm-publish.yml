@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  yarn-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
       - run: yarn test
       - run: yarn run build
   patch-version:
-    needs: build
+    needs: yarn-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
       - run: npm version patch
         env:
           GIT_AUTH_TOKEN: ${{secrets.git_token}}
-  publish-npm:
+  npm-publish:
     needs: patch-version
     runs-on: ubuntu-latest
     steps:
