@@ -9,7 +9,6 @@ import TerserPlugin from 'terser-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { getCompilerHooks } from 'webpack-manifest-plugin';
 import { merge } from 'webpack-merge';
-
 import { promtModuleToLoadInServer } from './webpack.prompt';
 import { getDevConfiguration } from './webpack.dev';
 import { getProdConfiguration } from './webpack.prod';
