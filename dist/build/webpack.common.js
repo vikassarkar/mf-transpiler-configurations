@@ -119,7 +119,7 @@ var WebpackBuild = /*#__PURE__*/function () {
       // assets path for images and fonts
       styleAssets: '/assets/',
       // style rooth path for adding styling if not imported in js files
-      styleRootpath: _path.default.resolve(params.rootpath, params.styleRootpath)
+      styleRootpath: params.styleRootpath ? _path.default.resolve(params.rootpath, params.styleRootpath) : null
     };
   }
 
@@ -131,11 +131,15 @@ var WebpackBuild = /*#__PURE__*/function () {
   }, {
     key: "getProjectEnv",
     value: function getProjectEnv() {
-      var projectConfig = _objectSpread({}, this.config.envConfig);
+      if (this.config.envConfig) {
+        var projectConfig = _objectSpread({}, this.config.envConfig);
 
-      projectConfig.localConfigs.isMock = this.config.env === 'development';
-      projectConfig.localConfigs.devTool = this.config.env === 'development';
-      return projectConfig;
+        projectConfig.localConfigs.isMock = this.config.env === 'development';
+        projectConfig.localConfigs.devTool = this.config.env === 'development';
+        return projectConfig;
+      }
+
+      return {};
     }
   }, {
     key: "getCommonConfiguration",
