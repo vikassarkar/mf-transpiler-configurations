@@ -17,7 +17,8 @@
     "clean-build": "rimraf dist",
     "es5": "babel src --out-dir dist",
     "watch": "nodemon -e src -x babel src --out-dir dist",
-    "build": "yarn clean-build && yarn es5"
+    "test": "echo '______________running cicd_______________'",
+    "build": "yarn es5"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
