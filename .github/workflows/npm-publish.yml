@@ -12,7 +12,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  patch-version:   
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - run: git config --global user.email "${{secrets.git_id}}"
+      - run: git config --global user.name "${{secrets.git_user}}"
+      - run: npm version patch  
   yarn-build:
+    needs: patch-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,19 +34,7 @@ jobs:
       - run: npm i -g yarn 
       - run: yarn install
       - run: yarn test
-      - run: yarn run build
-  patch-version:
-    needs: yarn-build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org/
-      - run: npm version patch
-        env:
-          GIT_AUTH_TOKEN: ${{secrets.git_token}}
+      - run: yarn run build     
   npm-publish:
     needs: patch-version
     runs-on: ubuntu-latest
