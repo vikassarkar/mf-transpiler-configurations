@@ -30,7 +30,6 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GIT_TOKEN}}
         run: |
           npm version patch
-          printf "\n\n$(date)" >> README.md
           git add .
           git commit -m "Upgrade to %s for publishing"
           git push
