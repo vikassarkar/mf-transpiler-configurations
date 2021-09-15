@@ -1,5 +1,6 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+# "https://${{secrets.GIT_USER}}:${{secrets.GIT_TOKEN}}@github.com/${{secrets.GIT_REPO}}"
 
 name: mf-transpiler-configurations publish
 
@@ -33,7 +34,7 @@ jobs:
           printf "\n\n$(date)" >> README.md
           git add .
           git commit -m "Upgrade to %s for publishing"
-          git push "https://${{secrets.GIT_USER}}:${{secrets.GIT_TOKEN}}@github.com/${{secrets.GIT_REPO}}"
+          git push
 
   yarn-build:
     needs: patch-version
