@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/extensions
-const eslintrc = require('./global/eslint.config.js');
+const eslintrc = require('./global/tslint.config.js');
 
 module.exports = {
     ...eslintrc,
