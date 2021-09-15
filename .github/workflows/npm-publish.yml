@@ -32,7 +32,7 @@ jobs:
           npm version patch
           git add .
           git commit -m "Upgrade to %s for publishing"
-          git push
+          git push origin/main
 
   yarn-build:
     needs: patch-version
