@@ -34,7 +34,7 @@ jobs:
           printf "\n\n$(date)" >> README.md
           git add .
           git commit -m "Upgrade to %s for publishing"
-          git push
+          git push --set-upstream origin master
 
   yarn-build:
     needs: patch-version
