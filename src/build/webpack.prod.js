@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import { MergeTranslatorPlugin } from './webpack.translator';
+import ModuleFederationPlugin from 'webpack/lib/container/ModuleFederationPlugin';
 
 /**
  *   //target: ['web', 'es5']
