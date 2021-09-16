@@ -1,6 +1,6 @@
 {
   "name": "mf-transpiler-configurations",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React Project build and dev server scripts",
   "main": "lib/index.js",
   "author": "vikassarkar",
