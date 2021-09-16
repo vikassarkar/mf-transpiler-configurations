@@ -2,7 +2,7 @@
   "name": "mf-transpiler-configurations",
   "version": "1.0.7",
   "description": "React Project build and dev server scripts",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "author": "vikassarkar",
   "license": "MIT",
   "repository": {
@@ -14,9 +14,9 @@
   },
   "scripts": {
     "clean-pkg": "rimraf node_modules && rimraf yarn-lock.yaml",
-    "clean-build": "rimraf dist",
-    "es5": "babel src --out-dir dist",
-    "watch": "nodemon -e src -x babel src --out-dir dist",
+    "clean-build": "rimraf lib",
+    "es5": "babel src --out-dir lib",
+    "watch": "nodemon -e src -x babel src --out-dir lib",
     "test": "echo '______________running cicd_______________'",
     "build": "yarn es5"
   },

@@ -1,5 +1,5 @@
 node_modules
-lib
+dist
 yarn-error.log
 __coverage__
 tests/*/__snapshots__
