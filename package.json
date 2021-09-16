@@ -52,6 +52,7 @@
     "core-js": "^3.11.2",
     "css-loader": "^5.2.4",
     "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.4",

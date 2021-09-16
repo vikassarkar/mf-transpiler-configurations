@@ -48,17 +48,20 @@ export const getProdConfiguration = (config) => {
         noSources: false,
         namespace: ''
       })
-    ],
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(config.styleRootpath, './src/assets'),
-    //       to: path.resolve(prodOutput, './assets')
-    //     }
-    //   ]
-    // }),
+    ]
   };
-
+  // if (config.mocksPath) {
+  //   configuration.plugins.push(
+  //     new CopyPlugin({
+  //       patterns: [
+  //         {
+  //           from: config.mocksPath,
+  //           to: path.resolve(devOutput, config.envConfig.localConfigs.mockUrl || './mocks')
+  //         }
+  //       ]
+  //     })
+  //   );
+  // }
   if (config.mfPluginObj) {
     configuration.plugins.push(
       new ModuleFederationPlugin({
